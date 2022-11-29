@@ -1,5 +1,5 @@
 @font-face {
-    font-family: norse-bold;
+    font-family: "norse-bold";
     src: url(./fonts/Norse-Bold.otf);
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -34,6 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background: hsl(0, 0%, 20%);
 }
 ol, ul {
 	list-style: none;
@@ -50,16 +51,43 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
 .container{
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+	justify-content: center;
 }
 .image-wrapper{
-    
+	width: 30vw;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	position: relative;
 }
 .image-wrapper img{
-    height: 100vh;
-    z-index: -1;
+	height: 100vh;
+	z-index: -99;
+}
+.logo-wrapper{
+	position: absolute;
+	bottom: 15%;
+}
+.logo-wrapper h1{
+	font-family: "norse-bold";
+	color: white;
+	font-size: 6rem;
+}
+.whole-form-wrapper{
+	width: 40vw;
+	background: white;
+}
+p{
+	color: white;
+}
+.author{
+	text-decoration: underline;
+	position: absolute;
+	bottom: 0;
 }
