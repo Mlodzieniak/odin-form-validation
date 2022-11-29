@@ -34,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: hsl(0, 0%, 20%);
+	background: #494b4b;
 }
 ol, ul {
 	list-style: none;
@@ -53,6 +53,14 @@ table {
 }
 
 
+:root{
+	--bg-color: #494b4b;
+	--text-bg-color: #0e5135;
+	--form-color: #0d9263;
+	--form-input-color: #4aba91;
+	--btn-color: #d4ce46;
+}
+
 .container{
     width: 100vw;
     height: 100vh;
@@ -60,7 +68,7 @@ table {
 	justify-content: center;
 }
 .image-wrapper{
-	width: 30vw;
+	width: min(400px 30vw);
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
@@ -73,21 +81,49 @@ table {
 .logo-wrapper{
 	position: absolute;
 	bottom: 15%;
+	display: flex;
+}
+.logo-wrapper img{
+	height: 6rem;
 }
 .logo-wrapper h1{
 	font-family: "norse-bold";
 	color: white;
 	font-size: 6rem;
 }
-.whole-form-wrapper{
-	width: 40vw;
-	background: white;
+.intro{
+	padding: 2rem;
 }
-p{
+.intro p{
+	font: 1.5rem bold sans-sanrif;
+}
+form{
+	background-color: var(--form-color);
+	padding: 2rem;
+}
+.whole-form-wrapper{
+	width: 600px;
+	/* width: min(45ch 40vw 60ch); */
+	/* width: clamp(50ch 40vw 40ch); */
+	background: white;
+	display: grid;
+	grid-template-rows: 1fr 2fr;
+	
+}
+.text-fields-wrapper{
+	display: grid;
+	grid-template-columns: 25ch 25ch;
+	grid-gap: 1rem;
+}
+.form-wrapper label{
+	display: block;
+	font-weight: bold;
+}
+.image-wrapper p{
 	color: white;
 }
 .author{
 	text-decoration: underline;
-	position: absolute;
+	position: relative;
 	bottom: 0;
 }
