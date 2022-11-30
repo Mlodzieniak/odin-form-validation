@@ -38,7 +38,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: var(--bg-color)
+	background: url(./images/topography.svg) #fff;
+	
+	background-size: 25%;
+	/* background: var(--bg-color) */
 }
 ol, ul {
 	list-style: none;
@@ -55,6 +58,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 
 
 :root{
@@ -117,10 +121,13 @@ form h3{
 }
 .whole-form-wrapper{
 	width: 600px;
-	background: white;
+	/* background: rgba(255, 255, 255, 0.5); */
 	display: grid;
 	grid-template-rows: 1fr 2fr;
-	
+}
+.whole-form-wrapper .intro{
+	background: url(./images/triangles.svg) no-repeat bottom;
+	background-size: cover;
 }
 .text-fields-wrapper{
 	display: grid;
@@ -185,12 +192,19 @@ input:invalid:required{
 	border: solid 2px hsl(220, 13%, 91%);
 	border-radius: 3px;
 }
-input:valid,
-input:focus:valid{
+input:valid{
 	border: solid 4px hsl(100, 100%, 60%);
 }
 input:invalid{
-	border: solid 2px hsl(14, 100%, 55%);
+	border: solid 4px hsl(14, 100%, 55%);
+}
+input:focus,
+input:empty{
+	outline: none;
+	border: none;
+}
+input:focus-visible{
+	/* border: solid 2px black; */
 }
 button{
 	font-size: 1.2rem;
@@ -201,4 +215,7 @@ button{
 	background-color: var(--btn-color);
 	color: white;
 	border-radius: 2px;
+}
+label>span{
+	font-size: 0.7rem;
 }
