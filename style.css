@@ -6,11 +6,6 @@
 	font-family: "Patua One";
 	src: url(./fonts/PatuaOne-Regular.ttf)
 }
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -39,9 +34,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background: url(./images/topography.svg) #fff;
-	
 	background-size: 25%;
-	/* background: var(--bg-color) */
 }
 ol, ul {
 	list-style: none;
@@ -67,6 +60,7 @@ table {
 	--form-color: #0d9263;
 	--form-input-color: hsl(30, 100%, 80%);
 	--btn-color: hsl(204, 100%, 30%);
+	--btn-color-hover: hsl(204, 100%, 40%);
 }
 
 .container{
@@ -121,7 +115,6 @@ form h3{
 }
 .whole-form-wrapper{
 	width: 600px;
-	/* background: rgba(255, 255, 255, 0.5); */
 	display: grid;
 	grid-template-rows: 1fr 2fr;
 }
@@ -131,12 +124,10 @@ form h3{
 }
 .text-fields-wrapper{
 	display: grid;
-	/* grid-template-areas: 
-	"dark medium-dark"
-	"medium-dark medium"
-	"medium light"; */
 	grid-template-columns: 1fr 1fr;
-	/* grid-gap: 1rem; */
+}
+.text-fields-wrapper div{
+	box-shadow: 0rem 0.05rem 0.3rem 0rem rgb(37, 37, 37);
 }
 .dark{
 	background-color: hsl(var(--bg-color), 100%, 60%);
@@ -155,17 +146,18 @@ form h3{
 }
 .form-wrapper label{
 	display: block;
+	white-space: nowrap;
 	font-weight: bold;
 	font: 0.9rem "Patua One";
 }
-.button-wrapper{
-	
+.button-wrapper{	
 	background-color: hsl(var(--bg-color), 100%, 80%);
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 	padding: 2rem;
 	padding-left: 1rem;
+	gap: 1rem;
 }
 .image-wrapper p{
 	position: absolute;
@@ -177,8 +169,6 @@ form h3{
 	position: relative;
 	bottom: 0;
 }
-
-/* form styling */
 button,
 input,
 select,
@@ -188,23 +178,21 @@ textarea {
   font-weight: 100;
   width: 90%;
 }
-input:invalid:required{
-	border: solid 2px hsl(220, 13%, 91%);
-	border-radius: 3px;
-}
-input:valid{
-	border: solid 4px hsl(100, 100%, 60%);
-}
-input:invalid{
-	border: solid 4px hsl(14, 100%, 55%);
-}
-input:focus,
-input:empty{
-	outline: none;
+input:empty:placeholder-shown,
+input:empty:valid:not(:required){
+	outline: solid 2px hsl(220, 13%, 91%);
 	border: none;
 }
-input:focus-visible{
-	/* border: solid 2px black; */
+input:valid{
+	outline: solid 1px rgb(57, 150, 39);
+	border: none;
+}
+input:invalid{
+	outline: solid 1px red;
+}
+#password, #confirm-password{
+	outline: solid 2px hsl(220, 13%, 91%);
+	border: none;
 }
 button{
 	font-size: 1.2rem;
@@ -215,7 +203,27 @@ button{
 	background-color: var(--btn-color);
 	color: white;
 	border-radius: 2px;
+	white-space: nowrap;
+}
+button:hover{
+	cursor: pointer;
+	background-color: var(--btn-color-hover);
+	box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem rgb(168, 168, 168);
+	transition: 0.05s;
 }
 label>span{
 	font-size: 0.7rem;
+}
+.button-wrapper span,
+a{
+	color: var(--btn-color);
+	text-decoration: none;
+}
+.error{
+	font-size: 0.9rem;
+	color: red;
+}
+input[type='email']{
+	border: none;
+	background: #fff;
 }
